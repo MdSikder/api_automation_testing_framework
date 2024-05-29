@@ -21,3 +21,58 @@
 Install the required packages:
 ```bash
 pip install -r requirements.txt
+
+Running Tests
+Run all tests and generate an HTML report and coverage report:
+        bash run_tests.sh
+
+
+
+Directory Structure:
+
+        api-automation-testing-framework/
+        │
+        ├── configurations/
+        │   └── config.ini
+        ├── logs/
+        │   └── test_logs.log
+        ├── src/
+        │   ├── __init__.py
+        │   ├── api_client.py
+        │   └── config_parser.py
+        ├── tests/
+        │   ├── integration_tests/
+        │   │   ├── __init__.py
+        │   │   ├── test_generate_token.py
+        │   │   ├── test_new_booking.py
+        │   │   └── test_update.py
+        │   ├── __init__.py
+        │   └── conftest.py
+        ├── .gitignore
+        ├── README.md
+        ├── run_tests.sh
+        ├── pytest.ini
+        └── requirements.txt
+
+configurations/: Configuration files.
+logs/: Log files generated during test runs.
+src/: Source files including API client and configuration parser.
+tests/: Test cases and fixtures.
+
+
+# Contributing
+Contributions are welcome! Please submit a pull request or create an issue for any changes or suggestions.
+
+License
+This project is licensed under the MIT License.
+
+
+### `run_tests.sh` Example
+```bash
+#!/bin/bash
+
+# Create reports directory if it doesn't exist
+mkdir -p reports
+
+# Run tests with HTML and coverage report
+pytest --html=reports/test_report.html --cov=src --cov-report=html:reports/coverage_report
