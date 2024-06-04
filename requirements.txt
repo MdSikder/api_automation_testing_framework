@@ -1,0 +1,5 @@
+Python
+requests
+pytest
+pytest-cov
+pytest-html
