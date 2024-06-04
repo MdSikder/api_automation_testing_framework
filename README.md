@@ -28,7 +28,7 @@ Run all tests and generate an HTML report and coverage report:
 
 
 
-Directory Structure:
+### Directory Structure:
 
         api-automation-testing-framework/
         │
@@ -60,7 +60,7 @@ src/: Source files including API client and configuration parser.
 tests/: Test cases and fixtures.
 
 
-# Contributing
+### Contributing
 Contributions are welcome! Please submit a pull request or create an issue for any changes or suggestions.
 
 License
