@@ -1,19 +1,19 @@
 import configparser
-import os
 
-# Path to the configuration file
-config_file_path = os.path.join(os.path.dirname(__file__), '../configurations/config.ini')
-
-# Create a ConfigParser instance and read the configuration file
-config = configparser.ConfigParser()
-config.read(config_file_path)
+# parse data inside config object
+config = configparser.RawConfigParser()
+# load data
+config.read(".\\configurations\\config.ini")
 
 
-# Function to get a setting from a specific section
-def get_setting(section, option):
-    return config.get(section, option)
+class ReadConfig:
+    @staticmethod
+    def get_base_url():
+        url = config.get('API', 'base_url')
+        return url
 
+    @staticmethod
+    def get_auth_token():
+        auth_token = config.get('API', 'auth_token')
+        return auth_token
 
-# Function to get all settings from a specific section
-def get_section(section):
-    return dict(config.items(section))

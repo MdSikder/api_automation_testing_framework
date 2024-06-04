@@ -1,6 +1,7 @@
 import logging
 import requests
 import pytest
+from src.config_parser import ReadConfig
 
 # Get the logger
 logger = logging.getLogger(__name__)
@@ -13,9 +14,9 @@ body = {
 }
 
 
-def get_auth_token(base_url):
+def get_auth_token():
+    base_url = ReadConfig.get_base_url()
     logger.info("Entering get_auth_token")
-
     # Endpoint for creating a token
     auth_url = f"{base_url}/auth"
 
@@ -42,9 +43,9 @@ def get_auth_token(base_url):
         raise
 
 
-def test_get_auth_token(base_url):
+def test_get_auth_token():
     # Get the token using the function
-    token = get_auth_token(base_url)
+    token = get_auth_token()
 
     # Print the token
     logger.info(f"Token: {token}")
