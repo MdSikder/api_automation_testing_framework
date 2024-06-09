@@ -17,3 +17,14 @@ class ReadConfig:
         auth_token = config.get('API', 'auth_token')
         return auth_token
 
+    # @staticmethod
+    # def get_header_content_type():
+    #     content_type = config.get('Headers', 'content_type')
+    #     return content_type
+
+    @staticmethod
+    def get_header_content_type():
+        # Return a dictionary instead of a string
+        return {
+            "Content-Type": "application/json"
+        }
